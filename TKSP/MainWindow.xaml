@@ -1,0 +1,819 @@
+﻿<Window x:Class="TKSP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TKSP"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Title="MainWindow" Height="450" Width="556" MouseMove="Window_MouseMove">
+    <Window.Foreground>
+        <ImageBrush/>
+    </Window.Foreground>
+    <Window.Background>
+        <ImageBrush/>
+    </Window.Background>
+
+    <Border CornerRadius="12">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFABFF00" Offset="0"/>
+                <GradientStop Color="#FFDAA634" Offset="0.75"/>
+                <GradientStop Color="#FFFF7704" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#FFABFF00" Offset="0"/>
+                <GradientStop Color="#FFFF7704" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Border CornerRadius="10"                    
+            BorderThickness="2">
+            <Border.Background>
+                <ImageBrush ImageSource="/bgDeveloper.png"
+                        Stretch="None" AlignmentX="Right" Opacity="0.3"/>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="382*"/>
+                    <ColumnDefinition Width="115*"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Tekno Kauçuk Sanayi A.Ş."
+                               Foreground="#FF414E09"
+                               FontSize="15"
+                               FontFamily="Montserrat"
+                               Grid.Column="0"
+                               VerticalAlignment="Center"
+                               Margin="10,0,0,0" Grid.ColumnSpan="2" Height="20"/>
+                <Button x:Name="btnMinimize"                           
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="Black"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="btnMinimize_Click" Background="#FF3AE081">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#28AEED"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#278BEF"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="btnClose"                          
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="Black"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="3"
+                            Click="btnClose_Click" Background="Red">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#DA34AE"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#C62DAE"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="onefunctionality"                          
+                            BorderThickness="0"
+                            Content="Birinci İşlevsellik"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,65,1,301"
+                            Click="onefunctionality_Click" HorizontalAlignment="Right" Width="159" Background="#FF0B6A82" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" MouseDoubleClick="onefunctionality_MouseDoubleClick">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF7F2AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF1ACE3E"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="twofunctionality"                          
+                            BorderThickness="0"
+                            Content="İkinci İşlevsellik"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,115,1,251"
+                            Click="twofunctionality_Click" HorizontalAlignment="Right" Width="159" Background="#FFD84A2A" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" MouseDoubleClick="twofunctionality_MouseDoubleClick" >
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF7F2AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF1ACE3E"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="threefunctionality"                          
+                            BorderThickness="0"
+                            Content="Üçüncü İşlevsellik"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,170,1,196"
+                            Click="threefunctionality_Click" HorizontalAlignment="Right" Width="159" Background="#FFBFD82A" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" MouseDoubleClick="threefunctionality_MouseDoubleClick">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF7F2AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF1ACE3E"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="fourfunctionality"                          
+                            BorderThickness="0"
+                            Content="Dördüncü İşlevsellik"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="6,225,0,141"
+                            Click="fourfunctionality_Click" HorizontalAlignment="Left" Width="159" Background="#FF540E9E" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" MouseDoubleClick="fourfunctionality_MouseDoubleClick">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF7F2AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF1ACE3E"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="fivefunctionality"                          
+                            BorderThickness="0"
+                            Content="Beşinci İşlevsellik"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,280,1,86"
+                            Click="fivefunctionality_Click" HorizontalAlignment="Right" Width="159" Background="#FFD82A2A" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" MouseDoubleClick="fivefunctionality_MouseDoubleClick">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF7F2AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF1ACE3E"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Grid x:Name="fibonnaciGird" Grid.RowSpan="2">
+                    <TextBox x:Name="txtfibonacci"
+                             FontSize="15"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"
+                             BorderThickness="0,0,0,0"
+                             VerticalContentAlignment="Center"
+                             Margin="38,228,0,0"
+                             Padding="0,0,0,0" 
+                             Foreground="White" Opacity="0.9" 
+                             HorizontalAlignment="Left" 
+                             Width="317" 
+                             SelectionTextBrush="#FF3C3C3C"
+                             SelectionBrush="#FF848484" 
+                             VerticalAlignment="Top" Text="Lütfen Sayı Giriniz" 
+                             HorizontalContentAlignment="Center" 
+                             MouseEnter="txtfibonacci_MouseEnter" 
+                             VerticalScrollBarVisibility="Auto">
+                        <TextBox.CaretBrush>
+                            <ImageBrush/>
+                        </TextBox.CaretBrush>
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Image/textboxi.png"
+                                        Stretch="None"
+                                        AlignmentX="Center"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+
+                    <Button x:Name="fibonnacibtn"                          
+                            BorderThickness="0"
+                            Content="Fibonacci Sırasını Bul"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="0,260,0,119"
+                            Click="fibonnacibtn_Click" HorizontalAlignment="Center" Width="158" Background="#FF1F9615">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#FF7F2AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF1ACE3E"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Image Margin="38,81,26,0" Source="/message2.png" Stretch="Fill" Opacity="0.9" Height="142" VerticalAlignment="Top">
+                        <Image.OpacityMask>
+                            <ImageBrush ImageSource="/message2.png"/>
+                        </Image.OpacityMask>
+                    </Image>
+
+                    <Label Name="fibonacciLabel" 
+                           Foreground="#FFFF3A00" 
+                           Margin="112,81,91,337"
+                           Content="! İlk İki Sayı 1 Olarak Hesaplanır !" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label Name="fibonacciresultLabel" 
+                           Foreground="White" 
+                           Margin="38,109,26,257"
+                           Content="Fibonacci sayısı: 159358" 
+                           HorizontalContentAlignment="Center"
+                           FontSize="25" VerticalContentAlignment="Center"
+                           />
+
+                </Grid>
+
+                <Grid x:Name="matrisDizisiGrid" Grid.RowSpan="2" Visibility="Hidden">
+                    <TextBox x:Name="txtmatris"
+                             
+                             FontSize="15"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"
+                             BorderThickness="0,0,0,0"
+                             VerticalContentAlignment="Center"
+                             Margin="0,93,0,51"
+                             Padding="0,0,0,0" 
+                             Foreground="White" 
+                             Opacity="0.9" 
+                             IsReadOnly="True"
+                             HorizontalAlignment="Center" 
+                             Width="382" 
+                             VerticalScrollBarVisibility="Auto">
+                        <TextBox.SelectionTextBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionTextBrush>
+                        <TextBox.SelectionBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionBrush>
+                        <TextBox.CaretBrush>
+                            <ImageBrush/>
+                        </TextBox.CaretBrush>
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Image/textboxi.png"
+                                        Stretch="None"
+                                        AlignmentX="Center"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+
+                    <Button x:Name="matrisbtn"                          
+                            BorderThickness="0"
+                            Content="Matris Dizisi Hessaplama"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="108,388,0,-9"
+                            Click="matrisbtn_Click" 
+                            HorizontalAlignment="Left" 
+                            Width="158" 
+                            Background="#FF1F9615">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#FF7F2AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF1ACE3E"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Image Margin="31,26,34,0" Source="/message2.png" Stretch="Fill" Opacity="0.9" Height="77" VerticalAlignment="Top">
+                        <Image.OpacityMask>
+                            <ImageBrush ImageSource="/message2.png"/>
+                        </Image.OpacityMask>
+                    </Image>
+
+                    <Label Name="matrisLabel" 
+                           Foreground="#FFC85707"
+                           FontSize="12"
+                           Margin="38,26,43,395"
+                           Content="Lütfen 1 ile 15 arasında bir tam sayı giriniz." HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+
+
+                    </Label>
+                    <TextBox Name="matrisTexbox"
+                             SelectionBrush="#FF42D700"
+                             Foreground="White"
+                             Text="Veri Girişi İçin Tklayınız."
+                             Margin="38,59,43,360"
+                             FontSize="20" 
+                             SelectionOpacity="5" 
+                             SelectionTextBrush="#FF9DC322" 
+                             MouseEnter="matrisTexbox_MouseEnter" 
+                             HorizontalContentAlignment="Center" 
+                             VerticalContentAlignment="Center">
+                        <TextBox.CaretBrush>
+                            <ImageBrush/>
+                        </TextBox.CaretBrush>
+                        <TextBox.Background>
+                            <ImageBrush/>
+                        </TextBox.Background>
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+                        <TextBox.FocusVisualStyle>
+                            <Style/>
+                        </TextBox.FocusVisualStyle>
+                    </TextBox>
+                </Grid>
+                <Grid x:Name="dataMonitorGrid" Grid.RowSpan="2" Visibility="Hidden">
+
+                    <ListBox  Name="dataMonitorListbox"
+                              Foreground="White" 
+                              Margin="10,48,10,81" 
+                              Background="#FF2D2D2D">
+                        <ListBox.BorderBrush>
+                            <ImageBrush/>
+                        </ListBox.BorderBrush>
+
+                    </ListBox>
+
+                    <Button x:Name="dataMonitorbtn"                          
+                            BorderThickness="0"
+                            Content="Veri Al"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="118,365,0,14" HorizontalAlignment="Left" Width="158" Background="#FF1F9615" Click="dataMonitorbtn_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#FF7F2AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF1ACE3E"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                </Grid>
+                <Grid x:Name="dataSortByGird" Grid.RowSpan="2" Visibility="Hidden">
+
+                    <TextBox x:Name="txtdataSortBy"
+                             FontSize="15"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"
+                             BorderThickness="0,0,0,0"
+                             Margin="0,43,27,81"
+                             Padding="0,0,0,0" 
+                             Foreground="White" Opacity="0.9" 
+                             HorizontalAlignment="Right" 
+                             VerticalScrollBarVisibility="Auto"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             IsReadOnly="True"
+                             Width="317">
+                        <TextBox.SelectionTextBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionTextBrush>
+                        <TextBox.SelectionBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionBrush>
+                        <TextBox.CaretBrush>
+                            <ImageBrush/>
+                        </TextBox.CaretBrush>
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Image/textboxi.png"
+                                        Stretch="None"
+                                        AlignmentX="Center"/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBox x:Name="dataSortBytexbox2" 
+                             HorizontalScrollBarVisibility="Visible" Visibility="Hidden">
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+                        <TextBox.Background>
+                            <ImageBrush/>
+                        </TextBox.Background>
+
+                    </TextBox>
+
+
+                    <Button x:Name="dataSortBybtn"                          
+                            BorderThickness="0"
+                            Content="Veri Al Ve Sırala"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="38,371,0,27" HorizontalAlignment="Left" Width="158" Background="#FF1F9615" Click="dataSortBybtn_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#FF7F2AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF1ACE3E"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="dataSortByClearbtn"                          
+                    BorderThickness="0"
+                    Content="Data Temizle"
+                    Foreground="White"
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"                           
+                    Margin="196,370,0,27"
+                    Click="dataSortByClearbtn_Click" 
+                    HorizontalAlignment="Left" 
+                    Width="158" 
+                    Background="#FFC73737">
+
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#FF7F2AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF1ACE3E"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="150" Height="40"
+                                CornerRadius="20"
+                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+                <Grid x:Name="multiplicationGird" Grid.RowSpan="2" Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="221*"/>
+                        <RowDefinition Height="225*"/>
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="multiplicationtexbox1"
+                             
+                             FontSize="15"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"
+                             BorderThickness="0,0,0,0"
+                             VerticalContentAlignment="Center"
+                             Margin="0,153,244,47"
+                             Padding="0,0,0,0" 
+                             Foreground="White"
+                             Opacity="0.9" 
+                             HorizontalAlignment="Right" 
+                             VerticalScrollBarVisibility="Auto"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             Width="100" HorizontalContentAlignment="Center">
+                        <TextBox.SelectionTextBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionTextBrush>
+                        <TextBox.SelectionBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionBrush>
+                        <TextBox.CaretBrush>
+                            <ImageBrush/>
+                        </TextBox.CaretBrush>
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Image/textboxi.png"
+                                        Stretch="None"
+                                        AlignmentX="Center"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+
+                    <Button x:Name="multiplicationbtn"                          
+                            BorderThickness="0"
+                            Content="Çarpım Hesapla"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Margin="118,30,0,146" HorizontalAlignment="Left" Width="158" Background="#FFD82A2A" Grid.Row="1" Click="multiplicationbtn_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#FF7F2AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF1ACE3E"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <TextBox x:Name="multiplicationtexbox2"
+                             
+                        FontSize="15"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"
+                        BorderThickness="0,0,0,0"
+                        VerticalContentAlignment="Center"
+                        Margin="0,153,135,47"
+                        Padding="0,0,0,0" 
+                        Foreground="White"
+                        Opacity="0.9"
+                        HorizontalAlignment="Right" 
+                        Width="100" HorizontalContentAlignment="Center">
+                        <TextBox.SelectionTextBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionTextBrush>
+                        <TextBox.SelectionBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionBrush>
+                        <TextBox.CaretBrush>
+                            <ImageBrush/>
+                        </TextBox.CaretBrush>
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Image/textboxi.png"
+                                Stretch="None"
+                                AlignmentX="Center"/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBox x:Name="multiplicationtexbox3"
+                             
+                        FontSize="15"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"
+                        BorderThickness="0,0,0,0"
+                        VerticalContentAlignment="Center"
+                        Margin="0,153,26,47"
+                        Padding="0,0,0,0" 
+                        Foreground="White" Opacity="0.9" HorizontalAlignment="Right" Width="100" HorizontalContentAlignment="Center">
+                        <TextBox.SelectionTextBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionTextBrush>
+                        <TextBox.SelectionBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionBrush>
+                        <TextBox.CaretBrush>
+                            <ImageBrush/>
+                        </TextBox.CaretBrush>
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Image/textboxi.png"
+                                Stretch="None"
+                                AlignmentX="Center"/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBox x:Name="multiplicationResult"
+                             
+                        FontSize="15"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"
+                        BorderThickness="0,0,0,0"
+                        VerticalContentAlignment="Center"
+                        Margin="38,200,0,1"
+                        Padding="0,0,0,0" 
+                        Foreground="White" Opacity="0.9" 
+                        HorizontalAlignment="Left" 
+                        Width="318" Height="20"
+                        HorizontalScrollBarVisibility="Disabled" 
+                        IsReadOnly="True"
+                        HorizontalContentAlignment="Center">
+                        <TextBox.SelectionTextBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionTextBrush>
+                        <TextBox.SelectionBrush>
+                            <ImageBrush/>
+                        </TextBox.SelectionBrush>
+                        <TextBox.CaretBrush>
+                            <ImageBrush/>
+                        </TextBox.CaretBrush>
+                        <TextBox.BorderBrush>
+                            <ImageBrush/>
+                        </TextBox.BorderBrush>
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Image/textboxi.png"
+                                Stretch="None"
+                                AlignmentX="Center"/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <Label Content="1.Sayı" HorizontalAlignment="Left" Margin="69,122,0,0" VerticalAlignment="Top"/>
+                    <Label Content="2.Sayı" HorizontalAlignment="Left" Margin="178,122,0,0" VerticalAlignment="Top"/>
+                    <Label Content="3.Sayı" HorizontalAlignment="Left" Margin="287,122,0,0" VerticalAlignment="Top"/>
+
+
+                </Grid>
+            </Grid>
+
+        </Border>
+
+    </Border>
+</Window>

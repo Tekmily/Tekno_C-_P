@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="bgDeveloper.png" />
+    <None Remove="message2.png" />
+    <None Remove="textboxi.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bgDeveloper.png" />
+    <Resource Include="Image\textboxi.png" />
+    <Resource Include="message2.png" />
+  </ItemGroup>
+
+</Project>
