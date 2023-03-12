@@ -354,6 +354,14 @@ namespace TKSP
 
         }//3 textbox'a girilen sayıları hesaplama bitiş
 
-       
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Uri.ToString());
+        }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            System.Diagnostics.Process.Start("chrome.exe", "https://github.com/Tekmily");
+        }
     }
 }
