@@ -13,7 +13,9 @@
         MouseMove="Window_MouseMove" 
         HorizontalAlignment="Center" 
         VerticalAlignment="Center"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" 
+        Icon="/proje.ico"
+        >
     <Window.Foreground>
         <ImageBrush/>
     </Window.Foreground>
@@ -984,6 +986,19 @@
                            HorizontalAlignment="Left" 
                            Grid.Row="1"/>
                 </Grid>
+                <TextBlock Margin="0,395,-12,-9"
+                           Grid.Row="1" 
+                           Grid.Column="2"
+                           Grid.ColumnSpan="4"
+                           MouseDown="TextBlock_MouseDown"
+                           FontSize="11"
+                           Cursor="Hand" >
+                         <Hyperlink NavigateUri="https://github.com/Tekmily"
+                                    Cursor="Hand" 
+                                    RequestNavigate="Hyperlink_RequestNavigate">
+                        Hazırlayan: Yusuf TEKMİL GitHub
+                </Hyperlink>
+                </TextBlock>
             </Grid>
 
         </Border>
