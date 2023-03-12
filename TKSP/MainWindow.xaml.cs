@@ -359,9 +359,11 @@ namespace TKSP
             System.Diagnostics.Process.Start(e.Uri.ToString());
         }
 
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+      
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("chrome.exe", "https://github.com/Tekmily");
+            System.Diagnostics.Process.Start("https://github.com/Tekmily");
         }
     }
 }
