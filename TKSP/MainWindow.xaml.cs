@@ -26,6 +26,7 @@ namespace TKSP
         public MainWindow()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
         }
 
         private void Window_MouseMove(object sender, MouseEventArgs e)
