@@ -528,6 +528,7 @@
                     </Button>
                 </Grid>
                 <Grid x:Name="dataMonitorGrid" Grid.RowSpan="2" Visibility="Hidden">
+                    <Label Content="1 den 200 olan Sayıların 3ve5 Katlarına zigzag Yazdırma" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.52" Grid.RowSpan="2" FontWeight="Bold" Width="360" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
                     <ListBox  Name="dataMonitorListbox"
                               Foreground="White" 
@@ -610,6 +611,7 @@
 
                 </Grid>
                 <Grid x:Name="dataSortByGird" Grid.RowSpan="2" Visibility="Hidden">
+                    <Label Content="Metin Dosyasındaki Sayısal Verileri Sıratma Yapınız" HorizontalAlignment="Center" Margin="0,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.52" FontWeight="Bold" Width="306" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
                     <TextBox x:Name="txtdataSortBy"
                              FontSize="15"
