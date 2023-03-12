@@ -88,19 +88,7 @@ namespace TKSP
             dataMonitorGrid.Visibility = Visibility.Hidden;
             dataSortByGird.Visibility = Visibility.Hidden;
             multiplicationGird.Visibility = Visibility.Visible;
-        }
-
-        private void matrisTexbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            matrisTexbox.Text=string.Empty;
-        }
-
-        private void matrisTexbox_MouseEnter(object sender, MouseEventArgs e)
-        {
-            matrisTexbox.Text = string.Empty;
-        }
-
-       
+        }      
 
         private void onefunctionality_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
@@ -208,12 +196,12 @@ namespace TKSP
             }
         }
 
-        private void txtfibonacci_MouseEnter(object sender, MouseEventArgs e)
+       private void txtfibonacci_MouseDown(object sender, MouseButtonEventArgs e)
         {
             txtfibonacci.Text = "";
         }
-            //fibonacci bitiş
-            //Matris
+        //fibonacci bitiş
+        //Matris
         private void matrisbtn_Click(object sender, RoutedEventArgs e)
         {
             int n;
@@ -257,6 +245,11 @@ namespace TKSP
                 matrisLabel.Foreground = Brushes.Yellow;
            
             }
+        }
+        private void matrisClearbtn_Click(object sender, RoutedEventArgs e)
+        {
+            txtmatris.Text=string.Empty;
+            matrisTexbox.Text = string.Empty;
         }
         //matris bitiş
         //zigzag yazdırma başlangıç
@@ -311,6 +304,7 @@ namespace TKSP
                 string temp = "";
                 string[] lines = System.IO.File.ReadAllLines(openFileDialog.FileName);
                 List<double> numbers = new List<double>();
+                
                 foreach (string line in lines)
                 {
                     string[] tokens = line.Split((char[])null, StringSplitOptions.RemoveEmptyEntries);
@@ -319,20 +313,28 @@ namespace TKSP
                         double number;
                         if (double.TryParse(token, out number))
                         {
-                            numbers.Add(number);
+                           
+                               
+                           
+                                numbers.Add(number);
+                            
+                           
                         }
                     }
                 }
+                
                 numbers.Sort();
                 foreach (double number in numbers)
                 {
-                    temp = number.ToString() + " ";
-                    dataSortBytexbox2.Text += temp;
+                   
+                    
+                  
+                    dataSortBytexbox2.Text = number.ToString()+" " ;
                     temp += dataSortBytexbox2.Text;
 
 
                 }
-                txtdataSortBy.AppendText(temp + Environment.NewLine);
+                txtdataSortBy.AppendText(temp  + Environment.NewLine);
             }
 
         }
@@ -357,7 +359,15 @@ namespace TKSP
                 MessageBox.Show("Lütfen sadece rakam giriniz!");
             }
         }
-        //3 textbox'a girilen sayıları hesaplama bitiş
+        private void multiplicationClearbtn_Click(object sender, RoutedEventArgs e)
+        {
+            multiplicationtexbox1.Text = string.Empty;
+            multiplicationtexbox2.Text = string.Empty;
+            multiplicationtexbox3.Text = string.Empty;
+            multiplicationResult.Text= string.Empty;
 
+        }//3 textbox'a girilen sayıları hesaplama bitiş
+
+       
     }
 }
