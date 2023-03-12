@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStyle="None"
-        Title="MainWindow" Height="450" Width="556" MouseMove="Window_MouseMove">
+        Title="MainWindow" 
+        Height="450"
+        Width="556" 
+        MouseMove="Window_MouseMove" 
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"
+        WindowStartupLocation="CenterScreen">
     <Window.Foreground>
         <ImageBrush/>
     </Window.Foreground>
@@ -32,7 +38,7 @@
         </Border.Background>
 
         <Border CornerRadius="10"                    
-            BorderThickness="2">
+            BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border.Background>
                 <ImageBrush ImageSource="/bgDeveloper.png"
                         Stretch="None" AlignmentX="Right" Opacity="0.3"/>
@@ -375,7 +381,7 @@
 
                 </Grid>
 
-                <Grid x:Name="matrisDizisiGrid" Grid.RowSpan="2">
+                <Grid x:Name="matrisDizisiGrid" Grid.RowSpan="2" Visibility="Hidden">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="0*"/>
@@ -452,10 +458,13 @@
                     </Button>
 
                     <Label Name="matrisLabel" 
-                           Foreground="#FFC85707"
+                           Foreground="Black"
                            FontSize="12"
                            Margin="38,17,43,401"
-                           Content="Veri Girişi Yapınız." HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                           Content="Lütfen 1 ile 15 arasında bir tam sayı giriniz."
+                           HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center"
+                           FontWeight="Bold">
 
 
                     </Label>
@@ -523,7 +532,8 @@
                     <ListBox  Name="dataMonitorListbox"
                               Foreground="White" 
                               Margin="10,48,10,81" 
-                              Background="#FF2D2D2D">
+                              Background="#FF2D2D2D" 
+                              Opacity="0.9">
                         <ListBox.BorderBrush>
                             <ImageBrush/>
                         </ListBox.BorderBrush>
@@ -537,7 +547,7 @@
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"                           
-                            Margin="118,365,0,14" HorizontalAlignment="Left" Width="158" Background="#FF1F9615" Click="dataMonitorbtn_Click">
+                            Margin="22,365,0,14" HorizontalAlignment="Left" Width="158" Background="#FF009A3B" Click="dataMonitorbtn_Click">
 
                         <Button.Style>
                             <Style TargetType="Button">
@@ -557,6 +567,41 @@
                                         Background="{TemplateBinding Background}">
                                     <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="dataMonitorSavebtn"                          
+                        BorderThickness="0"
+                        Content="Kaydet"
+                        Foreground="White"
+                        FontSize="12"
+                        FontFamily="Montserrat"
+                        Cursor="Hand"                           
+                        Margin="203,365,0,14"
+                            HorizontalAlignment="Left" 
+                            Width="158" 
+                            Background="#FF2F7D14" 
+                            Click="dataMonitorSavebtn_Click">
+
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#FF7F2AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF1ACE3E"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="150" Height="40"
+                                    CornerRadius="20"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
@@ -690,7 +735,7 @@
                              FontFamily="Montserrat"
                              BorderThickness="0,0,0,0"
                              VerticalContentAlignment="Center"
-                             Margin="0,153,244,47"
+                             Margin="0,153,260,47"
                              Padding="0,0,0,0" 
                              Foreground="White"
                              Opacity="0.9" 
@@ -698,7 +743,7 @@
                              VerticalScrollBarVisibility="Auto"
                              TextWrapping="Wrap"
                              AcceptsReturn="True"
-                             Width="100" HorizontalContentAlignment="Center">
+                             Width="84" HorizontalContentAlignment="Center">
                         <TextBox.SelectionTextBrush>
                             <ImageBrush/>
                         </TextBox.SelectionTextBrush>
@@ -758,12 +803,12 @@
                         FontFamily="Montserrat"
                         BorderThickness="0,0,0,0"
                         VerticalContentAlignment="Center"
-                        Margin="0,153,135,47"
+                        Margin="0,153,141,47"
                         Padding="0,0,0,0" 
                         Foreground="White"
                         Opacity="0.9"
                         HorizontalAlignment="Right" 
-                        Width="100" HorizontalContentAlignment="Center">
+                        Width="84" HorizontalContentAlignment="Center">
                         <TextBox.SelectionTextBrush>
                             <ImageBrush/>
                         </TextBox.SelectionTextBrush>
@@ -790,9 +835,9 @@
                         FontFamily="Montserrat"
                         BorderThickness="0,0,0,0"
                         VerticalContentAlignment="Center"
-                        Margin="0,153,26,47"
+                        Margin="0,153,26,48"
                         Padding="0,0,0,0" 
-                        Foreground="White" Opacity="0.9" HorizontalAlignment="Right" Width="100" HorizontalContentAlignment="Center">
+                        Foreground="White" Opacity="0.9" HorizontalAlignment="Right" Width="84" HorizontalContentAlignment="Center">
                         <TextBox.SelectionTextBrush>
                             <ImageBrush/>
                         </TextBox.SelectionTextBrush>
@@ -846,9 +891,9 @@
                                 AlignmentX="Center"/>
                         </TextBox.Background>
                     </TextBox>
-                    <Label Content="1.Sayı Giriniz" HorizontalAlignment="Left" Margin="50,122,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                    <Label Content="2.Sayı Giriniz" HorizontalAlignment="Left" Margin="159,122,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                    <Label Content="3.Sayı Giriniz" HorizontalAlignment="Left" Margin="268,122,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="1.Sayı Giriniz" HorizontalAlignment="Left" Margin="39,122,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="2.Sayı Giriniz" HorizontalAlignment="Left" Margin="157,122,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label Content="3.Sayı Giriniz" HorizontalAlignment="Left" Margin="272,122,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <Label Content="Sonuç" HorizontalAlignment="Left" Margin="177,174,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <Button x:Name="multiplicationClearbtn"                          
                         BorderThickness="0"
@@ -886,8 +931,36 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+                    <Label Content="!Bilgi! Giriniz Değerler (x+y)*z olarak hesaplanmaktadır." HorizontalAlignment="Left" Margin="39,91,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
 
+                </Grid>
+                <Grid Name="hiPanel" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <TextBlock Text="Hoş Geldiniz. "
+                    Foreground="#FF455408"
+                    FontSize="30"
+                    FontFamily="Montserrat"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="107,166,0,0" Height="52" 
+                           HorizontalAlignment="Left"/>
+                    <TextBlock Text="Lütfen Bir Seçim Yapınız "
+                    Foreground="#FF414E09"
+                    FontSize="30"
+                    FontFamily="Montserrat"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="37,198,0,0" Height="40" 
+                           HorizontalAlignment="Left" 
+                           Grid.Row="1"/>
                 </Grid>
             </Grid>
 

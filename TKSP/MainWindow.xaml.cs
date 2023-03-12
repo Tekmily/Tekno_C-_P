@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -52,6 +53,7 @@ namespace TKSP
             dataMonitorGrid.Visibility=Visibility.Hidden;
             dataSortByGird.Visibility=Visibility.Hidden;
             multiplicationGird.Visibility=Visibility.Hidden;
+            hiPanel.Visibility = Visibility.Hidden;
         }
 
         private void twofunctionality_Click(object sender, RoutedEventArgs e)
@@ -61,6 +63,7 @@ namespace TKSP
             dataMonitorGrid.Visibility = Visibility.Hidden;
             dataSortByGird.Visibility = Visibility.Hidden;
             multiplicationGird.Visibility = Visibility.Hidden;
+            hiPanel.Visibility = Visibility.Hidden;
         }
 
         private void threefunctionality_Click(object sender, RoutedEventArgs e)
@@ -70,6 +73,7 @@ namespace TKSP
             dataMonitorGrid.Visibility = Visibility.Visible;
             dataSortByGird.Visibility = Visibility.Hidden;
             multiplicationGird.Visibility = Visibility.Hidden;
+            hiPanel.Visibility = Visibility.Hidden;
         }
 
         private void fourfunctionality_Click(object sender, RoutedEventArgs e)
@@ -79,6 +83,7 @@ namespace TKSP
             dataMonitorGrid.Visibility = Visibility.Hidden;
             dataSortByGird.Visibility = Visibility.Visible;
             multiplicationGird.Visibility = Visibility.Hidden;
+            hiPanel.Visibility = Visibility.Hidden;
         }
 
         private void fivefunctionality_Click(object sender, RoutedEventArgs e)
@@ -88,52 +93,9 @@ namespace TKSP
             dataMonitorGrid.Visibility = Visibility.Hidden;
             dataSortByGird.Visibility = Visibility.Hidden;
             multiplicationGird.Visibility = Visibility.Visible;
+            hiPanel.Visibility = Visibility.Hidden;
         }      
 
-        private void onefunctionality_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            fibonnaciGird.Visibility = Visibility.Visible;
-            matrisDizisiGrid.Visibility = Visibility.Hidden;
-            dataMonitorGrid.Visibility = Visibility.Hidden;
-            dataSortByGird.Visibility = Visibility.Hidden;
-            multiplicationGird.Visibility = Visibility.Hidden;
-        }
-
-        private void twofunctionality_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            fibonnaciGird.Visibility = Visibility.Hidden;
-            matrisDizisiGrid.Visibility = Visibility.Visible;
-            dataMonitorGrid.Visibility = Visibility.Hidden;
-            dataSortByGird.Visibility = Visibility.Hidden;
-            multiplicationGird.Visibility = Visibility.Hidden;
-        }
-
-        private void threefunctionality_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            fibonnaciGird.Visibility = Visibility.Hidden;
-            matrisDizisiGrid.Visibility = Visibility.Hidden;
-            dataMonitorGrid.Visibility = Visibility.Visible;
-            dataSortByGird.Visibility = Visibility.Hidden;
-            multiplicationGird.Visibility = Visibility.Hidden;
-        }
-
-        private void fourfunctionality_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            fibonnaciGird.Visibility = Visibility.Hidden;
-            matrisDizisiGrid.Visibility = Visibility.Hidden;
-            dataMonitorGrid.Visibility = Visibility.Hidden;
-            dataSortByGird.Visibility = Visibility.Visible;
-            multiplicationGird.Visibility = Visibility.Hidden;
-        }
-
-        private void fivefunctionality_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            fibonnaciGird.Visibility = Visibility.Hidden;
-            matrisDizisiGrid.Visibility = Visibility.Hidden;
-            dataMonitorGrid.Visibility = Visibility.Hidden;
-            dataSortByGird.Visibility = Visibility.Hidden;
-            multiplicationGird.Visibility = Visibility.Visible;
-        }
         //fibonacci hesaplaması Başlangıç
         /*
          Bir textbox’a kaç yazarsam, düğmeye basıldığında, ekranda,
@@ -235,7 +197,7 @@ namespace TKSP
 
                 txtmatris.Text = sb.ToString();
                 matrisLabel.Background = Brushes.Transparent;
-                matrisLabel.Foreground = Brushes.Orange;
+                matrisLabel.Foreground = Brushes.Black;
 
             }
             else
@@ -250,6 +212,8 @@ namespace TKSP
         {
             txtmatris.Text=string.Empty;
             matrisTexbox.Text = string.Empty;
+            matrisLabel.Background = Brushes.Transparent;
+            matrisLabel.Foreground = Brushes.Black;
         }
         //matris bitiş
         //zigzag yazdırma başlangıç
@@ -291,8 +255,31 @@ namespace TKSP
             }
             Console.ReadLine();
         }
-            //zigzag yazdırma bitiş
-            //Çağrılan Sayıları Sıralama başlangış
+        private void dataMonitorSavebtn_Click(object sender, RoutedEventArgs e)
+        {
+           
+            
+                // Kaydedilecek dosya konumunu kullanıcıya seçtirin
+                var saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Text Files (*.txt)|*.txt";
+                if (saveDialog.ShowDialog() == true)
+                {
+                    // Seçilen konuma bir StreamWriter nesnesi oluşturun
+                    using (StreamWriter writer = new StreamWriter(saveDialog.FileName))
+                    {
+                        // ListBox öğelerini dosyaya yazın
+                        foreach (var item in dataMonitorListbox.Items)
+                        {
+                            writer.WriteLine(item.ToString());
+                        }
+                    }
+                    MessageBox.Show("Veriler metin dosyasına kaydedildi.");
+                
+            }
+
+        }
+        //zigzag yazdırma bitiş
+        //Çağrılan Sayıları Sıralama başlangış
         private void dataSortBybtn_Click(object sender, RoutedEventArgs e)
         {
 
