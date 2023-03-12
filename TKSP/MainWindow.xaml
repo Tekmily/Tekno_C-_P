@@ -24,16 +24,16 @@
     <Border CornerRadius="12">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#FFABFF00" Offset="0"/>
+                <GradientStop Color="#FF8FD00B" Offset="0"/>
                 <GradientStop Color="#FFDAA634" Offset="0.75"/>
-                <GradientStop Color="#FFFF7704" Offset="1"/>
+                <GradientStop Color="#FFCC630B" Offset="1"/>
             </LinearGradientBrush>
         </Border.BorderBrush>
         <Border.Background>
 
             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color="#FFABFF00" Offset="0"/>
-                <GradientStop Color="#FFFF7704" Offset="1"/>
+                <GradientStop Color="#FF8FD00B" Offset="0"/>
+                <GradientStop Color="#FFCC630B" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
 
@@ -56,14 +56,33 @@
                     <ColumnDefinition Width="25"/>
                     <ColumnDefinition Width="5"/>
                 </Grid.ColumnDefinitions>
+                <Image  Margin="142,-7,10,4"
+                        Source="/teknoK.png" 
+                        Opacity="0.50"
+                    >
+                    <Image.OpacityMask>
+                        <ImageBrush ImageSource="/teknoK.png"/>
+                    </Image.OpacityMask>
 
+                </Image>
                 <TextBlock Text="Tekno Kauçuk Sanayi A.Ş."
-                               Foreground="#FF414E09"
                                FontSize="15"
                                FontFamily="Montserrat"
                                Grid.Column="0"
-                               VerticalAlignment="Center"
-                               Margin="169,0,0,0" Height="20" HorizontalAlignment="Left"/>
+                               VerticalAlignment="Top"
+                               Margin="172,-1,0,0" Height="20" HorizontalAlignment="Left" Opacity="0.7">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFF210B" Offset="0.492"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                            <GradientStop Color="#FF0A0A0A"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                    <TextBlock.Background>
+                        <ImageBrush/>
+                    </TextBlock.Background>
+                </TextBlock>
                 <Button x:Name="btnMinimize"                           
                             BorderThickness="0"
                             Content="-"
