@@ -14,7 +14,7 @@
         HorizontalAlignment="Center" 
         VerticalAlignment="Center"
         WindowStartupLocation="CenterScreen" 
-        Icon="/proje.ico"
+        Icon="/tkk.ico"
         >
     <Window.Foreground>
         <ImageBrush/>

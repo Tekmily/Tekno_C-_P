@@ -14,6 +14,7 @@
     <None Remove="TEKNO.png" />
     <None Remove="teknoK.png" />
     <None Remove="textboxi.png" />
+    <None Remove="tkk.ico" />
     <None Remove="tkk.png" />
   </ItemGroup>
 
@@ -25,6 +26,7 @@
     <Resource Include="TEKNO.png" />
     <Resource Include="teknoK.png" />
     <Resource Include="textboxi.png" />
+    <Resource Include="tkk.ico" />
     <Resource Include="tkk.png" />
   </ItemGroup>
 
