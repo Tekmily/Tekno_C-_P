@@ -990,15 +990,24 @@
                            Grid.Row="1" 
                            Grid.Column="2"
                            Grid.ColumnSpan="4"
-                           MouseDown="TextBlock_MouseDown"
                            FontSize="11"
                            Cursor="Hand" >
                          <Hyperlink NavigateUri="https://github.com/Tekmily"
                                     Cursor="Hand" 
-                                    RequestNavigate="Hyperlink_RequestNavigate">
-                        Hazırlayan: Yusuf TEKMİL GitHub
+                                    Command="{Binding OpenPrivacyPolicyCommand}"
+                                    RequestNavigate="Hyperlink_RequestNavigate" Click="Hyperlink_Click">
+                             <Run Text="Hazırlayan: Yusuf TEKMİL GitHub"></Run>
+                             
+                        
                 </Hyperlink>
+                    <TextBlock.TextDecorations>
+                        <TextDecorationCollection>
+                            <TextDecoration Location="Underline" />
+                        </TextDecorationCollection>
+                    </TextBlock.TextDecorations>
                 </TextBlock>
+                
+
             </Grid>
 
         </Border>
