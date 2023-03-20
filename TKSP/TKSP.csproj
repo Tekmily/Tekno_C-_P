@@ -11,6 +11,7 @@
     <None Remove="bgDeveloper.png" />
     <None Remove="message2.png" />
     <None Remove="proje.ico" />
+    <None Remove="TEKNO.ico" />
     <None Remove="TEKNO.png" />
     <None Remove="teknoK.png" />
     <None Remove="textboxi.png" />
@@ -23,6 +24,7 @@
     <Resource Include="Image\textboxi.png" />
     <Resource Include="message2.png" />
     <Resource Include="proje.ico" />
+    <Resource Include="TEKNO.ico" />
     <Resource Include="TEKNO.png" />
     <Resource Include="teknoK.png" />
     <Resource Include="textboxi.png" />
